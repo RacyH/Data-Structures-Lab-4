@@ -15,7 +15,6 @@ void deleteitem();
 void viewitem();
 void reverse();
 int reversestack();
-int pushtobottom(int& t);
 
 Recursion slist, rlist, templist;
 
@@ -97,6 +96,7 @@ void menu()
 /*
 *Preconditions - Requires Stack::Push() is functioning, and that std and iostream are loaded. Recursion.h is required.
 *Postconditions - Adds the inputted item on top of the stack using the Push() function.
+* NOTE!!Can only add integers.
 */
 void additem()//Do not try and push the number -404.
 {
@@ -121,7 +121,7 @@ void deleteitem()
 
 /*
 *Preconditions - Std and iostream are loaded. Requires Recursion.h.
-*Postconditions - Outputs the item that is on top of the list.
+*Postconditions - Outputs the item that is on top of the stack.
 */
 void viewitem()
 {
