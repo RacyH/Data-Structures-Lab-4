@@ -82,9 +82,9 @@ void menu()
 			break;
 		case 'v': viewitem();
 			break;
-		case 'R': reversestack();
+		case 'R': reverse();
 			break;
-		case 'r': reversestack();
+		case 'r': reverse();
 			break;
 		case 'e': ex = false;
 			break;
