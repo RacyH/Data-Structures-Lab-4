@@ -1,7 +1,7 @@
 /*Racy Halterman
 * Data Structures Spring 2021
-* Due: March 3rd
-* Lab 3: Recursion
+* Due: March 5th
+* Lab 4: Recursion
 * A general stack program, but allows the user to reverse the order of the stack.
 */
 
@@ -41,6 +41,8 @@ bool Recursion::IsFull()
 
 int Recursion::Pop()
 {
+	if(!IsEmpty())//Added this in this lab so that it would execute the function normally
+	{
 	node* temp; //creat temp node.
 	int p;
 	temp = topitem; //set temp node to the top.
@@ -48,6 +50,7 @@ int Recursion::Pop()
 	topitem = topitem->next; //moves topitem to the next item.
 	free(temp); //I saw this somewhere, and thought it was cool, and so I tried it. Basically, it just deallocates the memory.
 	return p; //returns the value that was deleted.
+	}
 }
 
 void Recursion::Push(int value)

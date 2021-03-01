@@ -1,7 +1,7 @@
 /*Racy Halterman
 * Data Structures Spring 2021
-* Due: March 3rd
-* Lab 3: Recursion
+* Due: March 5th
+* Lab 4: Recursion
 * A general stack program, but allows the user to reverse the order of the stack.
 */
 
@@ -9,7 +9,7 @@
 using namespace std;
 
 void intro();
-void menu();
+int menu();
 void additem();
 void deleteitem();
 void viewitem();
@@ -22,7 +22,7 @@ int main()
 {
 
 	intro();
-	menu();//sure is passed through, i had it in an earlier implementation, but kept it so that if I wanted to mess around with it a bit more, I could.
+	menu();
 	return 0;
 }
 
@@ -49,13 +49,10 @@ void intro()//Just displays the intro to the project for the user.
 * Also requires that all of the functions work properly.
 *Postconditions - Sends the user to complete function, until the user decides to exit.
 */
-void menu()
+int menu()
 {
 	char menuitem;
-	bool ex = true;
 
-	while (ex == true)
-	{
 		system("cls"); //clears the screen.
 
 		cout << "Press the letter corresponding to the menu item that you would like to access.\n";
@@ -73,7 +70,7 @@ void menu()
 			break;
 		case 'V': viewitem();
 			break;
-		case 'E': ex = false;
+		case 'E': return 0;
 			break; //These are in both capital and lowercase letters, just in case the user doesn't want to use capitals.
 		case 'a': additem();
 			break;
@@ -85,12 +82,12 @@ void menu()
 			break;
 		case 'r': reverse();
 			break;
-		case 'e': ex = false;
+		case 'e': return 0;
 			break;
 		default: cout << "Invalid input. Please try again.\n";
 			break;
 		}
-	}
+		menu();//Recursion. Got rid of the loop.
 }
 
 /*
@@ -174,7 +171,7 @@ int reversestack()//Reverses the stack
 		rlist.Push(temp);//Pushes most recent item to the top of the list, so that the bottom of the slist is now the top of the rlist.
 		reversestack();//Calls reversestack() again, does this until it becomes empty, then each of the ones that have been called will start to return digits
 
-		return 1;//Returns once the list is empty, and the bottom of the old list is at the top of the new one.
+		return 0;//Returns once the list is empty, and the bottom of the old list is at the top of the new one.
 	}
 }
 //What happened here is that it called the reversestack inside of reversestack, until the list becomes empty.

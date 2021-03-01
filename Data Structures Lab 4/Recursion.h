@@ -1,7 +1,7 @@
 /*Racy Halterman
 * Data Structures Spring 2021
-* Due: March 3rd
-* Lab 3: Recursion
+* Due: March 5th
+* Lab 4: Recursion
 * A general stack program, but allows the user to reverse the order of the stack.
 */
 #ifndef RECURSION_H
