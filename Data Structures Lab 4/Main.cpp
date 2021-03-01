@@ -88,6 +88,7 @@ int menu()
 			break;
 		}
 		menu();//Recursion. Got rid of the loop.
+		return 0;
 }
 
 /*
